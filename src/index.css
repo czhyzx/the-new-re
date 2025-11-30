@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 全局样式 - 二次元风格 */
+:root {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* 自定义二次元风格颜色变量 */
+  --primary-color: #a855f7;
+  --secondary-color: #ec4899;
+  --accent-color: #3b82f6;
+}
+
+/* 自定义工具类 */
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* 全局动画效果 */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 5px rgba(168, 85, 247, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.7);
+  }
+  100% {
+    box-shadow: 0 0 5px rgba(168, 85, 247, 0.4);
+  }
+}
+
+/* 自定义链接添加动画 */
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* 增强文字渲染效果 */
+.text-shadow {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* 自定义链接卡片动画效果 */
+.custom-link-animation {
+  animation: slideIn 0.5s ease-out forwards;
+}
+
+/* 页面背景效果 */
+body {
+  background-color: #0f172a;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 30%),
+    radial-gradient(circle at 90% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 30%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+  /* 防止滚动时出现回弹效果 */
+  overscroll-behavior: none;
+}
